@@ -25,6 +25,7 @@ body {
   background: linear-gradient(135deg, #f8fbff 0%, var(--bg) 100%);
   line-height: 1.6;
   opacity: 0;
+  overflow-x: hidden;
   transition: opacity 0.4s ease;
 }
 
@@ -38,19 +39,26 @@ img {
 }
 
 .page {
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .profile-card {
   width: min(100%, 560px);
+  max-width: calc(100vw - 24px);
+  margin: 0 auto;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 28px;
   box-shadow: var(--shadow);
-  padding: 24px 18px;
+  padding: 20px 14px;
   animation: fadeInUp 0.7s ease both;
 }
 
@@ -69,6 +77,7 @@ img {
   align-items: center;
   text-align: center;
   width: 100%;
+  max-width: 100%;
 }
 
 .avatar {
@@ -109,6 +118,7 @@ h2 {
 
 #profile-bio {
   margin: 8px 0 0;
+  width: 100%;
   color: #334155;
   font-size: 0.95rem;
   font-weight: 500;
@@ -120,9 +130,17 @@ h2 {
   border-left: 3px solid var(--primary);
 }
 
+.link-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .links-grid {
   display: grid;
   gap: 12px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .contact-link {
@@ -131,12 +149,15 @@ h2 {
   justify-content: space-between;
   gap: 12px;
   width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 14px 16px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   color: var(--text);
   text-decoration: none;
+  overflow: hidden;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -166,6 +187,8 @@ h2 {
   align-items: center;
   gap: 12px;
   min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .link-icon {
@@ -183,6 +206,9 @@ h2 {
 .link-label {
   font-weight: 700;
   color: #1e293b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .link-subtext {
@@ -191,11 +217,15 @@ h2 {
   font-size: 0.82rem;
   color: #64748b;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .link-arrow {
   color: var(--primary);
   font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 @keyframes fadeInUp {
