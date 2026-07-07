@@ -1,18 +1,19 @@
 // Cấu hình dữ liệu chính của landing page.
 const profile = {
-  name: "Nguyễn Văn A",
-  title: "Senior Frontend Developer",
-  bio: "Tôi xây dựng trải nghiệm web hiện đại, tối giản và dễ tiếp cận cho mọi người.",
-  avatar: "assets/avatar.jpg",
-  logo: "assets/logo.png",
-  zalo: "https://zalo.me/0123456789",
-  whatsapp: "https://wa.me/84901234567",
-  facebook: "https://facebook.com/yourprofile",
-  tiktok: "https://www.tiktok.com/@yourprofile",
-  instagram: "https://www.instagram.com/yourprofile",
-  website: "https://yourwebsite.com",
-  email: "hello@yourdomain.com",
-  phone: "+84 901 234 567"
+  name: "Trang Hàn Jas Ecopark",
+  title: "Ecopark English Realtor",
+  bio: "📍183 HOUSING SOLUTIONS\n📍Chuyển nhượng & cho thuê\n📍Leasing - Selling - Homestay",
+  avatar: "assets/avatar1.jpg",
+  logo: "assets/avatar1.jpg",
+  zalo: "https://zalo.me/84398740430",
+  whatsapp: "https://wa.me/84398740430",
+  facebook: "https://www.facebook.com/TrangHanJasRealtor",
+  tiktok: "https://www.tiktok.com/@tranghan.jas",
+  instagram: "https://www.instagram.com/183housingsolutions",
+  website: "https://183housingsolutions.com",
+  email: "Jas.ecopark@gmail.com",
+  phone: "+84-3987-404-30",
+  youtube: "https://www.youtube.com/@tranghanecopark",
 };
 
 // Mỗi mục liên hệ sẽ được render dựa trên cấu hình trên.
@@ -21,50 +22,56 @@ const links = [
     key: "zalo",
     label: "Zalo",
     icon: "fa-solid fa-comment-dots",
-    subtext: "Nhắn tin nhanh"
+    subtext: "Nhắn tin nhanh",
   },
   {
     key: "whatsapp",
     label: "WhatsApp",
     icon: "fa-brands fa-whatsapp",
-    subtext: "Gọi hoặc chat"
+    subtext: "Gọi hoặc chat",
   },
   {
     key: "facebook",
     label: "Facebook",
     icon: "fa-brands fa-facebook-f",
-    subtext: "Theo dõi thêm"
+    subtext: "Theo dõi thêm",
   },
   {
     key: "tiktok",
     label: "TikTok",
     icon: "fa-brands fa-tiktok",
-    subtext: "Xem nội dung"
+    subtext: "Xem nội dung",
   },
   {
     key: "instagram",
     label: "Instagram",
     icon: "fa-brands fa-instagram",
-    subtext: "Cập nhật thường xuyên"
+    subtext: "Cập nhật thường xuyên",
   },
   {
     key: "website",
     label: "Website",
     icon: "fa-solid fa-globe",
-    subtext: "Xem portfolio"
+    subtext: "Xem portfolio",
   },
   {
     key: "email",
     label: "Email",
     icon: "fa-solid fa-envelope",
-    subtext: "Gửi thư"
+    subtext: "Gửi thư",
   },
   {
     key: "phone",
     label: "Gọi điện",
     icon: "fa-solid fa-phone",
-    subtext: "Liên hệ ngay"
-  }
+    subtext: "Liên hệ ngay",
+  },
+  {
+    key: "youtube",
+    label: "Youtube",
+    icon: "fa-brands fa-youtube",
+    subtext: "Subscribe",
+  },
 ];
 
 function getLinkUrl(key) {
@@ -92,8 +99,14 @@ function createLinkElement(linkConfig) {
   const link = document.createElement("a");
   link.className = `contact-link${isDisabled ? " is-disabled" : ""}`;
   link.href = href;
-  link.setAttribute("aria-label", `${linkConfig.label} - ${value || "Chưa cập nhật"}`);
-  link.target = isDisabled || linkConfig.key === "email" || linkConfig.key === "phone" ? "" : "_blank";
+  link.setAttribute(
+    "aria-label",
+    `${linkConfig.label} - ${value || "Chưa cập nhật"}`,
+  );
+  link.target =
+    isDisabled || linkConfig.key === "email" || linkConfig.key === "phone"
+      ? ""
+      : "_blank";
   link.rel = "noopener noreferrer";
 
   link.innerHTML = `
@@ -126,7 +139,10 @@ function renderProfile() {
 
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
-    metaDescription.setAttribute("content", `${profile.bio} Kết nối nhanh qua các kênh liên hệ.`);
+    metaDescription.setAttribute(
+      "content",
+      `${profile.bio} Kết nối nhanh qua các kênh liên hệ.`,
+    );
   }
 
   linksContainer.innerHTML = "";
