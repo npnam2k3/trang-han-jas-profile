@@ -9,11 +9,13 @@ const profile = {
   whatsapp: "https://wa.me/84398740430",
   facebook: "https://www.facebook.com/TrangHanJasRealtor",
   tiktok: "https://www.tiktok.com/@tranghan.jas",
-  instagram: "https://www.instagram.com/183housingsolutions",
+  instagram:
+    "https://www.instagram.com/jas.ecoparkforrent?igsh=MzBzdXdnMmNpazV6",
   website: "https://183housingsolutions.com",
   email: "Jas.ecopark@gmail.com",
   phone: "+84-3987-404-30",
   youtube: "https://www.youtube.com/@tranghanecopark",
+  fanpage: "https://www.facebook.com/profile.php?id=61585573714294",
 };
 
 // Mỗi mục liên hệ sẽ được render dựa trên cấu hình trên.
@@ -33,6 +35,12 @@ const links = [
   {
     key: "facebook",
     label: "Facebook",
+    icon: "fa-brands fa-facebook-f",
+    subtext: "Theo dõi thêm",
+  },
+  {
+    key: "fanpage",
+    label: "Fanpage",
     icon: "fa-brands fa-facebook-f",
     subtext: "Theo dõi thêm",
   },
